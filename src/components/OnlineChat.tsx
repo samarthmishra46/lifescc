@@ -13,7 +13,9 @@ const programs = [
       'DHT management for long-term protection'
     ],
     perfect: 'Perfect for customers who want visible regrowth without surgery.',
-    color: 'emerald'
+    color: 'emerald',
+    image: 'https://res.cloudinary.com/dqyizevct/image/upload/v1765266286/FIRST-SUBPROGRAM_u0aira.png',
+    imagePosition: 'left'
   },
   {
     icon: Scissors,
@@ -27,7 +29,9 @@ const programs = [
       'Advanced graft-preservation techniques'
     ],
     perfect: 'Perfect for customers who want a permanent, natural-looking hairline and fuller coverage.',
-    color: 'teal'
+    color: 'teal',
+    image: 'https://res.cloudinary.com/dqyizevct/image/upload/v1765266283/SECOND-SUBPROGRAM_gk9lyr.png',
+    imagePosition: 'right'
   }
 ];
 
@@ -44,40 +48,58 @@ export default function OnlineChat() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="space-y-16">
           {programs.map((program, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all border border-gray-100"
+              className={`grid lg:grid-cols-2 gap-8 items-center ${
+                program.imagePosition === 'right' ? 'lg:flex-row-reverse' : ''
+              }`}
             >
-              <div className={`w-16 h-16 rounded-full bg-${program.color}-100 text-${program.color}-600 flex items-center justify-center mb-6`}>
-                <program.icon className="w-8 h-8" />
-              </div>
-              
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                {program.title}
-              </h3>
-              
-              <p className="text-gray-600 leading-relaxed mb-6">
-                {program.description}
-              </p>
-
-              <div className="space-y-4 mb-6">
-                <h4 className="font-semibold text-gray-900">Includes:</h4>
-                <ul className="space-y-2">
-                  {program.includes.map((item, idx) => (
-                    <li key={idx} className="flex items-start space-x-3">
-                      <CheckCircle className={`w-5 h-5 text-${program.color}-600 flex-shrink-0 mt-0.5`} />
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              {/* Image Section */}
+              <div className={`${program.imagePosition === 'right' ? 'lg:order-2' : 'lg:order-1'} flex justify-center`}>
+                <div className="relative w-[500px] h-[500px] rounded-full overflow-hidden shadow-lg">
+                  <img
+                    src={program.image}
+                    alt={program.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
 
-              <div className={`bg-${program.color}-50 border border-${program.color}-200 rounded-lg p-4`}>
-                <p className={`text-${program.color}-800 font-medium`}>
-                  {program.perfect}
-                </p>
+              {/* Content Card */}
+              <div className={`${program.imagePosition === 'right' ? 'lg:order-1' : 'lg:order-2'}`}>
+                <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all border border-gray-100">
+                  <div className={`w-16 h-16 rounded-full bg-${program.color}-100 text-${program.color}-600 flex items-center justify-center mb-6`}>
+                    <program.icon className="w-8 h-8" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                    {program.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    {program.description}
+                  </p>
+
+                  <div className="space-y-4 mb-6">
+                    <h4 className="font-semibold text-gray-900">Includes:</h4>
+                    <ul className="space-y-2">
+                      {program.includes.map((item, idx) => (
+                        <li key={idx} className="flex items-start space-x-3">
+                          <CheckCircle className={`w-5 h-5 text-${program.color}-600 flex-shrink-0 mt-0.5`} />
+                          <span className="text-gray-700">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className={`bg-${program.color}-50 border border-${program.color}-200 rounded-lg p-4`}>
+                    <p className={`text-${program.color}-800 font-medium`}>
+                      {program.perfect}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           ))}

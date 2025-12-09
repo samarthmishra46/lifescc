@@ -1,30 +1,28 @@
-import { Phone } from 'lucide-react';
-
 export default function Header() {
   return (
-    <header className="bg-emerald-50 border-b border-emerald-100">
+    <header className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
-            <span className="text-2xl font-bold text-emerald-900">LIFESCC</span>
+            <div className="flex items-center space-x-3">
+              <img 
+                src="https://res.cloudinary.com/dqyizevct/image/upload/v1765269247/Gemini_Generated_Image_kol3yykol3yykol3-removebg-preview_wszmyy.png"
+                alt="Lifescc Logo"
+                className="h-24 w-auto"
+              />
+              
+            </div>
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#" className="text-gray-900 font-medium hover:text-emerald-600 transition-colors">Home</a>
-            <a href="#programs" className="text-gray-600 hover:text-emerald-600 transition-colors">Programs</a>
-            <a href="#why-us" className="text-gray-600 hover:text-emerald-600 transition-colors">Why Us</a>
-            <a href="#results" className="text-gray-600 hover:text-emerald-600 transition-colors">Results</a>
-            <a href="#faq" className="text-gray-600 hover:text-emerald-600 transition-colors">FAQ</a>
+            <a href="#services" className="text-gray-700 hover:text-emerald-600 transition-colors">Services</a>
+            <a href="#consultation" className="text-gray-700 hover:text-emerald-600 transition-colors">Consultation</a>
+            <a href="#articles" className="text-gray-700 hover:text-emerald-600 transition-colors">Articles</a>
           </nav>
 
-          <div className="flex items-center space-x-4">
-            <button className="hidden sm:flex items-center space-x-2 text-gray-600 hover:text-emerald-600 transition-colors">
-              <Phone className="w-4 h-4" />
-              <span className="text-sm">Book Consultation</span>
-            </button>
-            <button className="px-6 py-2 text-sm font-medium bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition-colors">
-              Get Started
-            </button>
+          <div className="flex items-center">
+            
           </div>
         </div>
       </div>

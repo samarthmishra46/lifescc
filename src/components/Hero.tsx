@@ -1,56 +1,50 @@
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="inline-block px-4 py-2 bg-emerald-100 rounded-full">
-              <span className="text-sm font-semibold text-emerald-800">The Most Advanced Hair Restoration & Transplant System</span>
-            </div>
+    <section className="relative h-[70vh] overflow-hidden">
+      
+      {/* FULL BACKGROUND IMAGE (covers entire hero) */}
+      <img
+        src="https://res.cloudinary.com/dqyizevct/image/upload/v1765267955/Gemini_Generated_Image_99l2lv99l2lv99l2_qr9vkl.png"
+        alt="Hair Restoration Expert"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* LEFT SIDE GREEN TINT OVERLAY */}
+      <div className="absolute inset-0 bg-gradient-to-r 
+        from-emerald-900/95 via-emerald-800/80 via-40% to-transparent">
+      </div>
+
+      {/* CONTENT */}
+      <div className="relative z-10 h-full flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="max-w-2xl space-y-6 text-white">
             
-            <div className="space-y-6">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                A Hair Solution Program That Restores Your Roots <span className="text-emerald-600">From Within</span>
-              </h1>
-              <div className="space-y-4 text-gray-700 text-lg">
-                <p className="leading-relaxed">
-                  Hair loss isn't just about bald spots.
-                </p>
-                <p className="leading-relaxed">
-                  With LIFESCC, you don't just cover the gap — you <strong>rebuild the hairline</strong>, <strong>regenerate follicles</strong>, and restore the way your hair grows, moves, and ages.
-                </p>
-                <p className="leading-relaxed">
-                  You deserve hair that looks natural, feels full, and makes you feel confident every single day.
-                </p>
-              </div>
-              <p className="text-emerald-800 font-medium">
-                Begin your personalised scalp evaluation today. Your new hair is waiting.
-              </p>
+            {/* Badge */}
+            <div className="inline-block px-4 py-2 bg-emerald-500 rounded-full shadow-lg">
+              <span className="text-sm font-semibold text-white">Hair Solution & Transplant Clinic</span>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-emerald-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-emerald-700 transition-colors shadow-lg shadow-emerald-600/30 text-lg">
-                Begin My Hair Transformation
-              </button>
-            </div>
-          </div>
+            {/* Heading */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}>
+              Lifescc: Transform Your Hair, Transform Your Life. 
+              <br />Advanced Hair Transplant & Solutions.
+            </h1>
 
-          <div className="relative">
-            <div className="absolute top-4 right-4 bg-white px-4 py-2 rounded-full shadow-lg flex items-center space-x-2 z-10">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-gray-700">35+ Years Experience</span>
-            </div>
+            {/* Paragraph */}
+            <p className="text-lg text-white leading-relaxed" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}>
+              Talk to a curious with fibered, scandalosis, gland and ionoccasic hair 
+              one with or improvement be cabin and adellar rea.
+            </p>
 
-            <div className="relative aspect-square lg:aspect-auto lg:h-[500px] flex items-center justify-center">
-              <img 
-                src="https://res.cloudinary.com/dqyizevct/image/upload/v1765087701/istockphoto-1301956338-612x612-removebg-preview_ygwxz4.png" 
-                alt="Hair Restoration Expert"
-                className="w-full h-full object-contain"
-              />
-            </div>
+            {/* CTA Button */}
+            <button className="bg-emerald-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-emerald-700 transition shadow-lg">
+              Book a Consultation
+            </button>
+
           </div>
         </div>
       </div>
+
     </section>
   );
 }
