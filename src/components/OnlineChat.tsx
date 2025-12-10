@@ -52,52 +52,54 @@ export default function OnlineChat() {
           {programs.map((program, index) => (
             <div
               key={index}
-              className={`grid lg:grid-cols-2 gap-8 items-center ${
-                program.imagePosition === 'right' ? 'lg:flex-row-reverse' : ''
-              }`}
+              className="relative"
             >
-              {/* Image Section */}
-              <div className={`${program.imagePosition === 'right' ? 'lg:order-2' : 'lg:order-1'} flex justify-center`}>
-                <div className="relative w-[500px] h-[500px] rounded-full overflow-hidden shadow-lg">
-                  <img
-                    src={program.image}
-                    alt={program.title}
-                    className="w-full h-full object-cover"
-                  />
+              <div className={`grid lg:grid-cols-2 gap-0 items-center ${
+                program.imagePosition === 'right' ? 'lg:flex-row-reverse' : ''
+              }`}>
+                {/* Image Section */}
+                <div className={`${program.imagePosition === 'right' ? 'lg:order-2 lg:pl-8' : 'lg:order-1 lg:pr-8'} flex justify-center relative z-0`}>
+                  <div className="relative w-[500px] h-[500px] rounded-full overflow-hidden shadow-2xl border-8 border-white">
+                    <img
+                      src={program.image}
+                      alt={program.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
-              </div>
 
-              {/* Content Card */}
-              <div className={`${program.imagePosition === 'right' ? 'lg:order-1' : 'lg:order-2'}`}>
-                <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all border border-gray-100">
-                  <div className={`w-16 h-16 rounded-full bg-${program.color}-100 text-${program.color}-600 flex items-center justify-center mb-6`}>
-                    <program.icon className="w-8 h-8" />
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    {program.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    {program.description}
-                  </p>
-
-                  <div className="space-y-4 mb-6">
-                    <h4 className="font-semibold text-gray-900">Includes:</h4>
-                    <ul className="space-y-2">
-                      {program.includes.map((item, idx) => (
-                        <li key={idx} className="flex items-start space-x-3">
-                          <CheckCircle className={`w-5 h-5 text-${program.color}-600 flex-shrink-0 mt-0.5`} />
-                          <span className="text-gray-700">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className={`bg-${program.color}-50 border border-${program.color}-200 rounded-lg p-4`}>
-                    <p className={`text-${program.color}-800 font-medium`}>
-                      {program.perfect}
+                {/* Content Card */}
+                <div className={`${program.imagePosition === 'right' ? 'lg:order-1 lg:-mr-32' : 'lg:order-2 lg:-ml-32'} relative z-10`}>
+                  <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-sm hover:shadow-xl transition-all border border-gray-100">
+                    <div className={`w-16 h-16 rounded-full bg-${program.color}-100 text-${program.color}-600 flex items-center justify-center mb-6`}>
+                      <program.icon className="w-8 h-8" />
+                    </div>
+                    
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      {program.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 leading-relaxed mb-6">
+                      {program.description}
                     </p>
+
+                    <div className="space-y-4 mb-6">
+                      <h4 className="font-semibold text-gray-900">Includes:</h4>
+                      <ul className="space-y-2">
+                        {program.includes.map((item, idx) => (
+                          <li key={idx} className="flex items-start space-x-3">
+                            <CheckCircle className={`w-5 h-5 text-${program.color}-600 flex-shrink-0 mt-0.5`} />
+                            <span className="text-gray-700">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className={`bg-${program.color}-50 border border-${program.color}-200 rounded-lg p-4`}>
+                      <p className={`text-${program.color}-800 font-medium`}>
+                        {program.perfect}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

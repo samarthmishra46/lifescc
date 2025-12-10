@@ -21,24 +21,33 @@ export default function Hero() {
             
             {/* Badge */}
             <div className="inline-block px-4 py-2 bg-emerald-500 rounded-full shadow-lg">
-              <span className="text-sm font-semibold text-white">Hair Solution & Transplant Clinic</span>
+              <span className="text-sm font-semibold text-white">The Most Advanced Hair Restoration & Transplant System</span>
             </div>
 
             {/* Heading */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight" style={{ textShadow: '2px 2px 8px rgba(0,0,0,0.5)' }}>
-              Lifescc: Transform Your Hair, Transform Your Life. 
-              <br />Advanced Hair Transplant & Solutions.
+              A Hair Solution Program That Restores Your Roots <span className="text-emerald-300">From Within</span>
             </h1>
 
             {/* Paragraph */}
-            <p className="text-lg text-white leading-relaxed" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}>
-              Talk to a curious with fibered, scandalosis, gland and ionoccasic hair 
-              one with or improvement be cabin and adellar rea.
+            <div className="text-lg text-white leading-relaxed space-y-4" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}>
+              <p>Hair loss isn't just about bald spots.</p>
+              <p>
+                With LIFESCC, you don't just cover the gap — you <strong>rebuild the hairline</strong>, <strong>regenerate follicles</strong>, and restore the way your hair grows, moves, and ages.
+              </p>
+              <p>
+                You deserve hair that looks natural, feels full, and makes you feel confident every single day.
+              </p>
+            </div>
+
+            {/* Call to action text */}
+            <p className="text-emerald-200 font-medium text-lg" style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.5)' }}>
+              Begin your personalised scalp evaluation today. Your new hair is waiting.
             </p>
 
             {/* CTA Button */}
-            <button className="bg-emerald-600 text-white px-8 py-3 rounded-md font-semibold hover:bg-emerald-700 transition shadow-lg">
-              Book a Consultation
+            <button className="bg-emerald-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-emerald-700 transition shadow-lg text-lg">
+              Begin My Hair Transformation
             </button>
 
           </div>
